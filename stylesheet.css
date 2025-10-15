@@ -128,11 +128,11 @@ body {
 
 .bulb-glow-yellow {
 	background-image: url('bulb_yellow.png');
-	-webkit-animation: bulb_glow_yellow linear 5s;
-	-moz-animation: bulb_glow_yellow linear 5s;
-	-o-animation: bulb_glow_yellow linear 5s;
-	-ms-animation: bulb_glow_yellow linear 5s;
-	animation: bulb_glow_yellow linear 5s;
+	-webkit-animation: bulb_glow_yellow linear 2s;
+	-moz-animation: bulb_glow_yellow linear 2s;
+	-o-animation: bulb_glow_yellow linear 2s;
+	-ms-animation: bulb_glow_yellow linear 2s;
+	animation: bulb_glow_yellow linear 2s;
 }
 
 @-webkit-keyframes bulb_glow_yellow {
@@ -203,11 +203,11 @@ body {
 
 .bulb-glow-red {
 	background-image: url('bulb_red.png');
-	-webkit-animation: bulb_glow_red linear 5s;
-	-moz-animation: bulb_glow_red linear 5s;
-	-o-animation: bulb_glow_red linear 5s;
-	-ms-animation: bulb_glow_red linear 5s;
-	animation: bulb_glow_red linear 5s;
+	-webkit-animation: bulb_glow_red linear 2s;
+	-moz-animation: bulb_glow_red linear 2s;
+	-o-animation: bulb_glow_red linear 2s;
+	-ms-animation: bulb_glow_red linear 2s;
+	animation: bulb_glow_red linear 2s;
 }
 
 @-webkit-keyframes bulb_glow_red {
@@ -277,11 +277,11 @@ body {
 }
 .bulb-glow-blue {
 	background-image: url('bulb_blue.png');
-	-webkit-animation: bulb_glow_blue linear 5s;
-	-moz-animation: bulb_glow_blue linear 5s;
-	-o-animation: bulb_glow_blue linear 5s;
-	-ms-animation: bulb_glow_blue linear 5s;
-	animation: bulb_glow_blue linear 5s;
+	-webkit-animation: bulb_glow_blue linear 2s;
+	-moz-animation: bulb_glow_blue linear 2s;
+	-o-animation: bulb_glow_blue linear 2s;
+	-ms-animation: bulb_glow_blue linear 2s;
+	animation: bulb_glow_blue linear 2s;
 }
 
 @-webkit-keyframes bulb_glow_blue {
@@ -352,11 +352,11 @@ body {
 
 .bulb-glow-green {
 	background-image: url('bulb_green.png');
-	-webkit-animation: bulb_glow_green linear 5s;
-	-moz-animation: bulb_glow_green linear 5s;
-	-o-animation: bulb_glow_green linear 5s;
-	-ms-animation: bulb_glow_green linear 5s;
-	animation: bulb_glow_green linear 5s;
+	-webkit-animation: bulb_glow_green linear 2s;
+	-moz-animation: bulb_glow_green linear 2s;
+	-o-animation: bulb_glow_green linear 2s;
+	-ms-animation: bulb_glow_green linear 2s;
+	animation: bulb_glow_green linear 2s;
 }
 
 @-webkit-keyframes bulb_glow_green {
@@ -427,11 +427,11 @@ body {
 
 .bulb-glow-pink {
 	background-image: url('bulb_pink.png');
-	-webkit-animation: bulb_glow_pink linear 5s;
-	-moz-animation: bulb_glow_pink linear 5s;
-	-o-animation: bulb_glow_pink linear 5s;
-	-ms-animation: bulb_glow_pink linear 5s;
-	animation: bulb_glow_pink linear 5s;
+	-webkit-animation: bulb_glow_pink linear 2s;
+	-moz-animation: bulb_glow_pink linear 2s;
+	-o-animation: bulb_glow_pink linear 2s;
+	-ms-animation: bulb_glow_pink linear 2s;
+	animation: bulb_glow_pink linear 2s;
 }
 
 @-webkit-keyframes bulb_glow_pink {
@@ -502,11 +502,11 @@ body {
 
 .bulb-glow-orange {
 	background-image: url('bulb_orange.png');
-	-webkit-animation: bulb_glow_orange linear 5s;
-	-moz-animation: bulb_glow_orange linear 5s;
-	-o-animation: bulb_glow_orange linear 5s;
-	-ms-animation: bulb_glow_orange linear 5s;
-	animation: bulb_glow_orange linear 5s;
+	-webkit-animation: bulb_glow_orange linear 2s;
+	-moz-animation: bulb_glow_orange linear 2s;
+	-o-animation: bulb_glow_orange linear 2s;
+	-ms-animation: bulb_glow_orange linear 2s;
+	animation: bulb_glow_orange linear 2s;
 }
 
 @-webkit-keyframes bulb_glow_orange {
@@ -1056,7 +1056,7 @@ audio {
 	100% {
 		-ms-transform:translate(0px,0px);
 	}
-}o
+}
 @keyframes bannar_come {
 	0%{
 		transform:translate(0px,-1000px);
@@ -1299,7 +1299,83 @@ audio {
         color: #fff;
         background-color: #466baf;
     }
+/* Style untuk container foto */
+#photo_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    display: none; /* Tetap disembunyikan secara default */
+    /* Container akan mengikuti ukuran gambar di dalamnya */
+}
 
+.birthday-photo {
+    /* Atur batasan ukuran langsung pada gambar */
+    max-width: 70vw; /* Diubah dari 80vw agar sedikit lebih ramping */
+    max-height: 45vh; /* Diubah dari 60vh menjadi 45vh agar lebih pendek */
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Penyesuaian untuk balon agar lebih ke tengah */
+.balloons {
+    position: absolute;
+    display: none; /* Tambahkan baris ini */
+}
+
+/* Pastikan balon H2 memiliki z-index yang cukup tinggi jika overlap */
+.balloons h2 {
+    position: relative;
+    z-index: 100;
+}
+
+/* Mendesain Kartu Ucapan */
+.message {
+    position: fixed;
+    top: 40%; /* Diubah dari 50% untuk posisi lebih ke atas */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF8E1;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+/* Mengatur Teks di Dalam Kartu */
+.message p {
+    font-family: 'Signika', sans-serif;
+    font-size: 1.2em; /* Ukuran font yang nyaman dibaca */
+    color: #5D4037; /* Warna coklat tua agar elegan */
+    text-shadow: none; /* Hapus bayangan teks agar bersih */
+    text-transform: none; /* Hapus uppercase, biarkan normal */
+    font-weight: normal;
+    margin-bottom: 1em; /* Jarak antar paragraf */
+    display: block !important; /* Pastikan semua paragraf terlihat */
+}
+
+/* Tombol Close ('X') pada Kartu */
+.close-card {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #5D4037;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-card:hover {
+    opacity: 0.7;
+}
 
 
     /*controlling tablet width*/
