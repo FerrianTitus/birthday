@@ -1076,22 +1076,23 @@ audio {
 }
 
 .balloons {
-	position: fixed;
-	bottom: -200px;
-	opacity: 0.6;
-	z-index: 99;
-	width: 100px;
-	height: 183px;
-	background-repeat: no-repeat no-repeat;
-	background-size: 100px 183px;
+    position: fixed; /* Ubah dari absolute ke fixed agar lebih konsisten */
+    bottom: -200px;
+    opacity: 0.6;
+    z-index: 99;
+    width: 80px; /* Diubah dari 100px */
+    height: 146px; /* Diubah dari 183px (menjaga rasio) */
+    background-repeat: no-repeat no-repeat;
+    background-size: 80px 146px; /* Sesuaikan dengan ukuran baru */
+    display: none;
 }
 .balloons h2 {
-	text-transform: uppercase;
-	font-family: 'Signika', sans-serif;
-	font-size: 50px;
-	color: #BF4136;
-	text-shadow: 5px 5px 5px #FFF;
-	display: none;
+    text-transform: uppercase;
+    font-family: 'Signika', sans-serif;
+    font-size: 40px; /* Diubah dari 50px */
+    color: #BF4136;
+    text-shadow: 5px 5px 5px #FFF;
+    display: none;
 }
 #b1,#b11 {
 	background-image: url('b1.png');
