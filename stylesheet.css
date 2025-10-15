@@ -135,6 +135,7 @@ body {
 	-o-animation: bulb_glow_yellow linear 2s;
 	-ms-animation: bulb_glow_yellow linear 2s;
 	animation: bulb_glow_yellow linear 2s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bulb_glow_yellow {
@@ -210,6 +211,7 @@ body {
 	-o-animation: bulb_glow_red linear 2s;
 	-ms-animation: bulb_glow_red linear 2s;
 	animation: bulb_glow_red linear 2s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bulb_glow_red {
@@ -284,6 +286,7 @@ body {
 	-o-animation: bulb_glow_blue linear 2s;
 	-ms-animation: bulb_glow_blue linear 2s;
 	animation: bulb_glow_blue linear 2s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bulb_glow_blue {
@@ -359,6 +362,7 @@ body {
 	-o-animation: bulb_glow_green linear 2s;
 	-ms-animation: bulb_glow_green linear 2s;
 	animation: bulb_glow_green linear 2s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bulb_glow_green {
@@ -434,6 +438,7 @@ body {
 	-o-animation: bulb_glow_pink linear 2s;
 	-ms-animation: bulb_glow_pink linear 2s;
 	animation: bulb_glow_pink linear 2s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bulb_glow_pink {
@@ -509,6 +514,7 @@ body {
 	-o-animation: bulb_glow_orange linear 2s;
 	-ms-animation: bulb_glow_orange linear 2s;
 	animation: bulb_glow_orange linear 2s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bulb_glow_orange {
@@ -1355,13 +1361,13 @@ audio {
 /* Mengatur Teks di Dalam Kartu */
 .message p {
     font-family: 'Signika', sans-serif;
-    font-size: 1.2em; /* Ukuran font yang nyaman dibaca */
-    color: #5D4037; /* Warna coklat tua agar elegan */
-    text-shadow: none; /* Hapus bayangan teks agar bersih */
-    text-transform: none; /* Hapus uppercase, biarkan normal */
+    font-size: 1.0em; /* Diubah dari 1.2em */
+    color: #5D4037;
+    text-shadow: none;
+    text-transform: none;
     font-weight: normal;
-    margin-bottom: 1em; /* Jarak antar paragraf */
-    display: block !important; /* Pastikan semua paragraf terlihat */
+    margin-bottom: 1em;
+    display: block !important;
 }
 
 /* Tombol Close ('X') pada Kartu */
