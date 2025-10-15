@@ -7,13 +7,6 @@ $('document').ready(function(){
         $(window).resize(function(){
              vw = $(window).width()/2;
             $('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-            $('#b11').animate({top:240, left: vw-350},500);
-            $('#b22').animate({top:240, left: vw-250},500);
-            $('#b33').animate({top:240, left: vw-150},500);
-            $('#b44').animate({top:240, left: vw-50},500);
-            $('#b55').animate({top:240, left: vw+50},500);
-            $('#b66').animate({top:240, left: vw+150},500);
-            $('#b77').animate({top:240, left: vw+250},500);
         });
 
     $('#turn_on').click(function(){
@@ -40,6 +33,7 @@ $('document').ready(function(){
             var nameChars = normalizedName.split('');
             $('.balloons').hide(); 
             for (var i = 0; i < nameChars.length; i++) {
+                // Baris ini penting untuk menampilkan balon yang benar
                 $('#b' + (i + 1)).show();
                 $('#b' + (i + 1) + ' h2').text(nameChars[i].toUpperCase());
             }
@@ -96,13 +90,10 @@ $('document').ready(function(){
         $('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
         $('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
         
-        loopBalloon('#b1');
-        loopBalloon('#b2');
-        loopBalloon('#b3');
-        loopBalloon('#b4');
-        loopBalloon('#b5');
-        loopBalloon('#b6');
-        loopBalloon('#b7');
+        // Memanggil loop untuk setiap balon yang terlihat
+        $('.balloons:visible').each(function() {
+            loopBalloon('#' + $(this).attr('id'));
+        });
         
         $(this).fadeOut('slow').delay(5000).promise().done(function(){
             $('#cake_fadein').fadeIn('slow');
@@ -122,27 +113,27 @@ $('document').ready(function(){
             $('#wish_message').fadeIn('slow');
         });
     });
-
         
     $('#wish_message').click(function(){
-         vw = $(window).width()/2;
+        var vw = $(window).width() / 2;
 
-        $('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
-        $('#b1').attr('id','b11');
-        $('#b2').attr('id','b22')
-        $('#b3').attr('id','b33')
-        $('#b4').attr('id','b44')
-        $('#b5').attr('id','b55')
-        $('#b6').attr('id','b66')
-        $('#b7').attr('id','b77')
+        // --- PERBAIKAN DI SINI ---
+        // Kode yang salah sudah dihapus. Kita hanya perlu menghentikan animasi.
+        $('.balloons').stop();
         
-        var balloonSpacing = 100;
-        var totalBalloonsWidth = ($('.balloons:visible').length - 1) * balloonSpacing;
-        var startLeft = vw - (totalBalloonsWidth / 2);
+        var balloonWidth = 80; 
+        var balloonSpacing = 90; 
+        var numBalloons = $('.balloons:visible').length;
+        
+        var totalGroupWidth = (numBalloons * balloonWidth) + ((numBalloons - 1) * (balloonSpacing - balloonWidth));
+        
+        var startLeft = vw - (totalGroupWidth / 2);
+        
         var balloonTopPosition = $(window).height() * 0.7; 
 
         $('.balloons:visible').each(function(index) {
-            $(this).animate({top: balloonTopPosition, left: startLeft + (index * balloonSpacing)}, 500);
+            var newLeft = startLeft + (index * balloonSpacing);
+            $(this).animate({top: balloonTopPosition, left: newLeft}, 500);
         });
 
         $('.balloons').css('opacity','0.9');
@@ -155,23 +146,18 @@ $('document').ready(function(){
         });
     });
     
-    // --- FUNGSI LAMA DIHAPUS DAN DIGANTI DENGAN INI ---
     $('#story').click(function(){
         $(this).fadeOut('slow');
-        // Sembunyikan semua elemen lain
         $('#photo_container').fadeOut('fast');
         $('.cake').fadeOut('fast');
         $('.balloons').fadeOut('fast');
         $('.bannar').fadeOut('fast');
         
-        // Tampilkan kartu ucapan
         $('.message').fadeIn('slow');
     });
 
-    // --- FUNGSI BARU UNTUK TOMBOL CLOSE ---
     $('.close-card').click(function(){
         $('.message').fadeOut('slow');
-        // Opsional: tampilkan lagi beberapa elemen setelah kartu ditutup
         $('.cake').fadeIn('slow');
     });
 });
