@@ -33,7 +33,6 @@ $('document').ready(function(){
             var nameChars = normalizedName.split('');
             $('.balloons').hide(); 
             for (var i = 0; i < nameChars.length; i++) {
-                // Baris ini penting untuk menampilkan balon yang benar
                 $('#b' + (i + 1)).show();
                 $('#b' + (i + 1) + ' h2').text(nameChars[i].toUpperCase());
             }
@@ -90,7 +89,6 @@ $('document').ready(function(){
         $('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
         $('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
         
-        // Memanggil loop untuk setiap balon yang terlihat
         $('.balloons:visible').each(function() {
             loopBalloon('#' + $(this).attr('id'));
         });
@@ -117,8 +115,6 @@ $('document').ready(function(){
     $('#wish_message').click(function(){
         var vw = $(window).width() / 2;
 
-        // --- PERBAIKAN DI SINI ---
-        // Kode yang salah sudah dihapus. Kita hanya perlu menghentikan animasi.
         $('.balloons').stop();
         
         var balloonWidth = 80; 
@@ -129,7 +125,8 @@ $('document').ready(function(){
         
         var startLeft = vw - (totalGroupWidth / 2);
         
-        var balloonTopPosition = $(window).height() * 0.7; 
+        // --- PERUBAHAN DI SINI ---
+        var balloonTopPosition = $(window).height() * 0.8; // Diubah dari 0.7 menjadi 0.8 untuk posisi lebih rendah
 
         $('.balloons:visible').each(function(index) {
             var newLeft = startLeft + (index * balloonSpacing);
