@@ -1371,12 +1371,12 @@ audio {
     display: block !important;
 }
 
-/* ATURAN BARU: Penyesuaian khusus untuk layar kecil (HP) */
+/* ATURAN KHUSUS UNTUK LAYAR KECIL (HP) */
 @media (max-width: 768px) {
     .message {
-        top: 85px; /* Diubah: Posisi pasti, tepat di bawah lampu (tinggi lampu 70px + 15px margin) */
-        padding: 25px 20px;
-        max-height: calc(100vh - 100px); /* Diubah: Menyesuaikan tinggi maksimal agar bawahnya tidak terpotong */
+        top: 80px; /* Diubah: Posisi dibuat lebih tinggi lagi, lebih dekat ke lampu */
+        padding: 15px 20px 25px; /* Diubah: Padding atas dikurangi agar teks lebih naik */
+        max-height: calc(100vh - 95px); /* Disesuaikan dengan posisi top yang baru */
     }
 
     .message p {
