@@ -1343,19 +1343,32 @@ audio {
 /* Mendesain Kartu Ucapan */
 .message {
     position: fixed;
-    top: 5vh; /* Diubah: Memberi jarak 5% dari atas layar */
+    top: 3vh; /* Diubah: Posisi lebih ke atas lagi (3% dari atas) */
     left: 50%;
-    transform: translateX(-50%); /* Diubah: Hanya untuk center horizontal */
+    transform: translateX(-50%);
     background-color: #FFF8E1;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     max-width: 600px;
     width: 90%;
-    max-height: 85vh; /* Sedikit diperbesar agar bisa menampung lebih banyak teks */
-    overflow-y: auto; /* Pastikan bisa di-scroll jika teks panjang */
+    max-height: 94vh; /* Diubah: Diberi ruang vertikal maksimal */
+    overflow-y: auto;
     z-index: 1000;
     display: none;
+    -webkit-overflow-scrolling: touch; /* Ditambah: Ini PENTING untuk memperbaiki scroll di HP (khususnya iPhone) */
+}
+
+/* ATURAN BARU: Penyesuaian khusus untuk layar kecil (HP) */
+@media (max-width: 768px) {
+    .message {
+        padding: 25px 20px; /* Padding diperkecil agar tulisan lebih lega */
+    }
+
+    .message p {
+        font-size: 0.9em; /* Ukuran font diperkecil agar semua tulisan muat tanpa scroll */
+        margin-bottom: 0.8em; /* Jarak antar paragraf sedikit dirapatkan */
+    }
 }
 
 /* Mengatur Teks di Dalam Kartu */
