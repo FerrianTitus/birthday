@@ -125,8 +125,7 @@ $('document').ready(function(){
         
         var startLeft = vw - (totalGroupWidth / 2);
         
-        // --- PERUBAHAN DI SINI ---
-        var balloonTopPosition = $(window).height() * 0.8; // Diubah dari 0.7 menjadi 0.8 untuk posisi lebih rendah
+        var balloonTopPosition = $(window).height() * 0.8; 
 
         $('.balloons:visible').each(function(index) {
             var newLeft = startLeft + (index * balloonSpacing);
@@ -155,6 +154,13 @@ $('document').ready(function(){
 
     $('.close-card').click(function(){
         $('.message').fadeOut('slow');
+        
         $('.cake').fadeIn('slow');
+        $('.bannar').fadeIn('slow');
+        $('#photo_container').fadeIn('slow');
+        $('.balloons').has('h2:not(:empty)').fadeIn('slow');
+
+        // BARIS BARU: Tampilkan kembali tombol untuk membuka kartu
+        $('#story').fadeIn('slow'); 
     });
 });

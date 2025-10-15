@@ -123,7 +123,9 @@ body {
 }
 
 .bulb-holder {
-	height: 70px;
+    height: 70px;
+    position: relative; /* Tambahkan baris ini */
+    z-index: 1001;      /* Tambahkan baris ini */
 }
 
 .bulb-glow-yellow {
